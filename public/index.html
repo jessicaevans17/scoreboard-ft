@@ -8,7 +8,23 @@
 		<link rel="stylesheet" href="/screen.css" />
 	</head>
 	<body>
-		<h1>My Score Board</h1>
+		<nav class="header-footer">
+			<section class="logo">
+				<img
+					class="hockey-pic"
+					src="assets/hockeyplayericon.png"
+					alt="sketch of hockey player"
+				/>
+				<h1>Hockey Hoopla</h1>
+			</section>
+			<section class="nav-items">
+				<a href="about.html">About</a>
+				<a href="#">Team Standings</a>
+				<a class="active-link" href="index.html">My Score Board</a>
+				<a href="#">Community</a>
+				<a href="#"> Contact</a>
+			</section>
+		</nav>
 		<section class="teams">
 			<section class="team one">
 				<section>
@@ -16,17 +32,17 @@
 					<p class="team-1-score">0</p>
 				</section>
 				<section>
-					<section>
+					<section class="padding">
 						Update Team 1 Name
 						<input type="text" class="team-1-input" />
 						<button class="update-team-1-name">Update</button>
 					</section>
-					<section>
+					<section class="padding">
 						Update Team 1 Score
 						<button class="team-1-add-1-button">Add 1</button>
 						<button class="team-1-subtract-1-button">Subtract 1</button>
 					</section>
-					<section>
+					<section class="padding">
 						Log Scores
 						<button class="team-1-period-1">Period 1</button>
 						<button class="team-1-period-2">Period 2</button>
@@ -41,17 +57,17 @@
 				</section>
 
 				<section>
-					<section>
+					<section class="padding">
 						Update Team 2 Name
 						<input type="text" class="team-2-input" />
 						<button class="update-team-2-name">Update</button>
 					</section>
-					<section>
+					<section class="padding">
 						Update Team 2 Score
 						<button class="team-2-add-1-button">Add 1</button>
 						<button class="team-2-subtract-1-button">Subtract 1</button>
 					</section>
-					<section>
+					<section class="padding">
 						Log Scores
 						<button class="team-2-period-1">Period 1</button>
 						<button class="team-2-period-2">Period 2</button>
@@ -87,6 +103,22 @@
 				</tr>
 			</table>
 		</section>
+
+		<footer class="header-footer">
+			<h3>Stay connected with me.</h3>
+			<section class="media-links">
+				<a href="https://www.linkedin.com/in/jessica-evans-2544b18a/"
+					><img src="./assets/LI-In-Bug.png"
+				/></a>
+				<a href="https://www.instagram.com/msmatryoshka/"
+					><img src="./assets/glyph-logo_May2016.png"
+				/></a>
+				<a href="https://twitter.com/Msmatryoshka/"
+					><img src="./assets/Twitter_Social_Icon_Circle_Color.png"
+				/></a>
+			</section>
+			<p>Made with love at Suncoast Developer's Guild.</p>
+		</footer>
 
 		<script src="/main.js" charset="utf-8"></script>
 	</body>
