@@ -168,6 +168,16 @@ footer {
 	display: none;
 }
 
+.blink-me {
+	animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+
 @media (min-width: 360px) and (max-width: 800px) {
 	.nav-items {
 		display: flex;

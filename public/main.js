@@ -166,6 +166,7 @@ const winnerWinner = () => {
 		document.querySelector('.team-2-subtract-1-button').disabled = true
 		document.querySelector('.winner-message').textContent = 'Team One Wins!!'
 		document.querySelector('.winner-message').classList.remove('hide')
+		document.querySelector('.team-1-score').classList.add('blink-me')
 		document.querySelector('.reset').classList.remove('hide')
 	} else if (counterTwo === 21) {
 		document.querySelector('.team-1-add-1-button').disabled = true
@@ -174,11 +175,12 @@ const winnerWinner = () => {
 		document.querySelector('.team-2-subtract-1-button').disabled = true
 		document.querySelector('.winner-message').textContent = 'Team Two Wins!!'
 		document.querySelector('.winner-message').classList.remove('hide')
+		document.querySelector('.team-2-score').classList.add('blink-me')
 		document.querySelector('.reset').classList.remove('hide')
 	}
 }
 
-resetGame = () => {
+const resetGame = () => {
 	counterOne = 0
 	counterTwo = 0
 	document.querySelector('.team-1-score').textContent = 0
@@ -188,6 +190,8 @@ resetGame = () => {
 	document.querySelector('.team-2-add-1-button').disabled = false
 	document.querySelector('.team-2-subtract-1-button').disabled = false
 	document.querySelector('.winner-message').classList.add('hide')
+	document.querySelector('.team-1-score').classList.remove('blink-me')
+	document.querySelector('.team-2-score').classList.remove('blink-me')
 	document.querySelector('.reset').classList.add('hide')
 }
 
