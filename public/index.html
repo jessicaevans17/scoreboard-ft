@@ -6,17 +6,31 @@
 		<title>Scoreboard</title>
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="stylesheet" href="/screen.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Cinzel:900&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<nav class="header-footer">
 			<section class="logo">
 				<img
+					class="hockey-pic pic-disappear"
+					src="assets/oldhockeypic1.png"
+					alt="silhouettes of hockey players"
+				/>
+				<img
 					class="hockey-pic"
-					src="assets/hockeyplayericon.png"
+					src="assets/oldhockeypic2.png"
+					alt="silhouettes of hockey players"
+				/>
+				<img
+					class="hockey-pic pic-disappear"
+					src="assets/oldhockeypic3.png"
 					alt="sketch of hockey player"
 				/>
-				<h1>Hockey Hoopla</h1>
 			</section>
+			<h1>Hockey Hoopla</h1>
 			<section class="nav-items">
 				<a href="about.html">About</a>
 				<a href="#">Team Standings</a>
@@ -27,22 +41,22 @@
 		</nav>
 		<section class="teams">
 			<section class="team one">
-				<section>
+				<section class="name-score">
 					<h2 class="team-1-name">Team 1</h2>
 					<p class="team-1-score">0</p>
 				</section>
 				<section>
-					<section class="padding">
+					<section class="padding section-center-align">
 						Update Team 1 Name
 						<input type="text" class="team-1-input" />
 						<button class="update-team-1-name">Update</button>
 					</section>
-					<section class="padding">
+					<section class="padding section-center-align">
 						Update Team 1 Score
 						<button class="team-1-add-1-button">Add 1</button>
 						<button class="team-1-subtract-1-button">Subtract 1</button>
 					</section>
-					<section class="padding">
+					<section class="padding section-center-align">
 						Log Scores
 						<button class="team-1-period-1">Period 1</button>
 						<button class="team-1-period-2">Period 2</button>
@@ -51,23 +65,23 @@
 				</section>
 			</section>
 			<section class="team two">
-				<section>
+				<section class="name-score">
 					<h2 class="team-2-name">Team 2</h2>
 					<p class="team-2-score">0</p>
 				</section>
 
 				<section>
-					<section class="padding">
+					<section class="padding section-center-align">
 						Update Team 2 Name
 						<input type="text" class="team-2-input" />
 						<button class="update-team-2-name">Update</button>
 					</section>
-					<section class="padding">
+					<section class="padding section-center-align">
 						Update Team 2 Score
 						<button class="team-2-add-1-button">Add 1</button>
 						<button class="team-2-subtract-1-button">Subtract 1</button>
 					</section>
-					<section class="padding">
+					<section class="padding section-center-align">
 						Log Scores
 						<button class="team-2-period-1">Period 1</button>
 						<button class="team-2-period-2">Period 2</button>
@@ -117,7 +131,10 @@
 					><img src="./assets/Twitter_Social_Icon_Circle_Color.png"
 				/></a>
 			</section>
-			<p>Made with love at Suncoast Developer's Guild.</p>
+			<p>
+				Copyright © 2019 Jessica Evans. Built with love at Suncoast Developers
+				Guild
+			</p>
 		</footer>
 
 		<script src="/main.js" charset="utf-8"></script>
