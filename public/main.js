@@ -164,7 +164,8 @@ const winnerWinner = () => {
 		document.querySelector('.team-1-subtract-1-button').disabled = true
 		document.querySelector('.team-2-add-1-button').disabled = true
 		document.querySelector('.team-2-subtract-1-button').disabled = true
-		document.querySelector('.winner-message').textContent = 'Team One Wins!!'
+		document.querySelector('.winner-message').textContent =
+			document.querySelector('.team-1-name').textContent + ' ' + 'wins!!'
 		document.querySelector('.winner-message').classList.remove('hide')
 		document.querySelector('.team-1-score').classList.add('blink-me')
 		document.querySelector('.reset').classList.remove('hide')
@@ -173,7 +174,8 @@ const winnerWinner = () => {
 		document.querySelector('.team-1-subtract-1-button').disabled = true
 		document.querySelector('.team-2-add-1-button').disabled = true
 		document.querySelector('.team-2-subtract-1-button').disabled = true
-		document.querySelector('.winner-message').textContent = 'Team Two Wins!!'
+		document.querySelector('.winner-message').textContent =
+			document.querySelector('.team-2-name').textContent + ' ' + 'win!!'
 		document.querySelector('.winner-message').classList.remove('hide')
 		document.querySelector('.team-2-score').classList.add('blink-me')
 		document.querySelector('.reset').classList.remove('hide')
@@ -185,6 +187,10 @@ const resetGame = () => {
 	counterTwo = 0
 	document.querySelector('.team-1-score').textContent = 0
 	document.querySelector('.team-2-score').textContent = 0
+	document.querySelector('.team-1-name').textContent = 'Team 1'
+	document.querySelector('.team-2-name').textContent = 'Team 2'
+	document.querySelector('.team-1-table-name').textContent = 'Team 1'
+	document.querySelector('.team-2-table-name').textContent = 'Team 2'
 	document.querySelector('.team-1-add-1-button').disabled = false
 	document.querySelector('.team-1-subtract-1-button').disabled = false
 	document.querySelector('.team-2-add-1-button').disabled = false
