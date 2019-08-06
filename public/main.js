@@ -1,7 +1,7 @@
-const main = () => {}
-
 let counterOne = 0
 let counterTwo = 0
+
+const main = () => {}
 
 const updateTeamOneName = () => {
 	console.log('Update Team 1 Name')
@@ -26,17 +26,26 @@ const updateTeamTwoName = () => {
 }
 
 const addOneTeamOne = () => {
-	// add 1 to counter
-	counterOne = counterOne + 1
-	// update HTML
-	document.querySelector('.team-1-score').textContent = counterOne
+	if (counterOne < 21) {
+		// add 1 to counter
+		counterOne = counterOne + 1
+		// update HTML
+		document.querySelector('.team-1-score').textContent = counterOne
+	} else {
+		console.log('You win!!')
+	}
+	winnerWinner()
 }
 
 const subtractOneTeamOne = () => {
-	// subtract 1 from counter
-	counterOne = counterOne - 1
-	// update HTML
-	document.querySelector('.team-1-score').textContent = counterOne
+	if (counterOne >= 1) {
+		// subtract 1 from counter
+		counterOne = counterOne - 1
+		// update HTML
+		document.querySelector('.team-1-score').textContent = counterOne
+	} else {
+		console.log('no negative numbers!')
+	}
 }
 
 const logTeamOnePeriodOne = () => {
@@ -86,17 +95,26 @@ const addTeamOneScores = () => {
 }
 
 const addOneTeamTwo = () => {
-	// add 1 to counter
-	counterTwo = counterTwo + 1
-	// update HTML
-	document.querySelector('.team-2-score').textContent = counterTwo
+	if (counterTwo < 21) {
+		// add 1 to counter
+		counterTwo = counterTwo + 1
+		// update HTML
+		document.querySelector('.team-2-score').textContent = counterTwo
+	} else {
+		console.log('Team 2 wins!')
+	}
+	winnerWinner()
 }
 
 const subtractOneTeamTwo = () => {
-	// subtract 1 from counter
-	counterTwo = counterTwo - 1
-	// update HTML
-	document.querySelector('.team-2-score').textContent = counterTwo
+	if (counterTwo >= 1) {
+		// subtract 1 from counter
+		counterTwo = counterTwo - 1
+		// update HTML
+		document.querySelector('.team-2-score').textContent = counterTwo
+	} else {
+		console.log('No negative numbers, Team 2!')
+	}
 }
 
 const logTeamTwoPeriodOne = () => {
@@ -106,7 +124,6 @@ const logTeamTwoPeriodOne = () => {
 	counterTwo = 0
 	// clear out the current score
 	document.querySelector('.team-2-score').textContent = counterTwo
-
 	addTeamTwoScores()
 }
 
@@ -117,7 +134,6 @@ const logTeamTwoPeriodTwo = () => {
 	counterTwo = 0
 	// clear out the current score
 	document.querySelector('.team-2-score').textContent = counterTwo
-
 	addTeamTwoScores()
 }
 
@@ -128,7 +144,6 @@ const logTeamTwoPeriodThree = () => {
 	counterTwo = 0
 	// clear out the current score
 	document.querySelector('.team-2-score').textContent = counterTwo
-
 	addTeamTwoScores()
 }
 
@@ -139,10 +154,41 @@ const addTeamTwoScores = () => {
 	periodTwoScore = parseFloat(periodTwoScore)
 	let periodThreeScore = document.querySelector('.t2-p3-score').textContent
 	periodThreeScore = parseFloat(periodThreeScore)
-
 	const totalScore = periodOneScore + periodTwoScore + periodThreeScore
-
 	document.querySelector('.t2-total-score').textContent = totalScore
+}
+
+const winnerWinner = () => {
+	if (counterOne === 21) {
+		document.querySelector('.team-1-add-1-button').disabled = true
+		document.querySelector('.team-1-subtract-1-button').disabled = true
+		document.querySelector('.team-2-add-1-button').disabled = true
+		document.querySelector('.team-2-subtract-1-button').disabled = true
+		document.querySelector('.winner-message').textContent = 'Team One Wins!!'
+		document.querySelector('.winner-message').classList.remove('hide')
+		document.querySelector('.reset').classList.remove('hide')
+	} else if (counterTwo === 21) {
+		document.querySelector('.team-1-add-1-button').disabled = true
+		document.querySelector('.team-1-subtract-1-button').disabled = true
+		document.querySelector('.team-2-add-1-button').disabled = true
+		document.querySelector('.team-2-subtract-1-button').disabled = true
+		document.querySelector('.winner-message').textContent = 'Team Two Wins!!'
+		document.querySelector('.winner-message').classList.remove('hide')
+		document.querySelector('.reset').classList.remove('hide')
+	}
+}
+
+resetGame = () => {
+	counterOne = 0
+	counterTwo = 0
+	document.querySelector('.team-1-score').textContent = 0
+	document.querySelector('.team-2-score').textContent = 0
+	document.querySelector('.team-1-add-1-button').disabled = false
+	document.querySelector('.team-1-subtract-1-button').disabled = false
+	document.querySelector('.team-2-add-1-button').disabled = false
+	document.querySelector('.team-2-subtract-1-button').disabled = false
+	document.querySelector('.winner-message').classList.add('hide')
+	document.querySelector('.reset').classList.add('hide')
 }
 
 document
@@ -192,5 +238,7 @@ document
 document
 	.querySelector('.team-2-period-3')
 	.addEventListener('click', logTeamTwoPeriodThree)
+
+document.querySelector('.reset').addEventListener('click', resetGame)
 
 document.addEventListener('DOMContentLoaded', main)
